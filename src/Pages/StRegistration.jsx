@@ -1,42 +1,35 @@
 import React, { useState, useEffect } from "react";
-import Title from "./Componant/Title";
-import Lable from "./Componant/Lable";
-import Input from "./Componant/Input";
-import StRegistration from "./Pages/StRegistration";
+import Title from "./../Componant/Title";
+import Lable from "./../Componant/Lable";
+import Input from "./../Componant/Input";
+import Button from "./../Componant/Button";
+import FormContainer from "./../Componant/FormContainer";
 
-function App() {
+function StRegistration() {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [tpNumber, setTpNumber] = useState("");
-  const [stClass, setStClass] = useState("");
 
   // useEffect(() => {
   //   setDisplayName(name);
   // },[name]);
 
   const handleClick = (e) => {
-
-    e.preventDefault()
-    const student = { stName: name, stAddress: address, stTele: tpNumber, stClass: stClass }
-
+    e.preventDefault();
+    const student = { stName: name, stAddress: address, stTele: tpNumber };
     console.log(student);
-    fetch("http://127.0.0.1:8080/student/reg", {
+    fetch("http://localhost:8080/student/add", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(student),
-      mode: "cors",
-      credentials: "include",
-
+    }).then(() => {
+      alert("New Student added");
     });
   };
 
   return (
     <div className="App ">
-
       <Title title="Student Registration Form" />
-
       <form className="border-2 border-black w-[60%] mx-auto">
         <Lable lable="Student Full Name :" />
         <Input
@@ -46,7 +39,6 @@ function App() {
         />
         <br />
         <Lable lable="Address :" />
-
         <Input
           placeHolder="Address"
           dynamicWidth="50%"
@@ -60,29 +52,26 @@ function App() {
           dynamicWidth="30%"
           onChange={(e) => setTpNumber(e.target.value)}
         />
-        <br />
 
         <br />
-        <Lable lable="Class :" />
-        <Input
-          placeHolder="Class"
-          dynamicWidth="30%"
-          onChange={(e) => setStClass(e.target.value)}
-        />
-        <br />
-        <br />
-        <button
-          className="border border-black"
-          type="submit"
-          onClick={handleClick}
-        >
-          Submit
-        </button>
+        <Button button="Submit " onClick={handleClick} />
       </form>
-      <StRegistration />
 
+      {/* form container */}
+
+      <FormContainer>
+        <div className="grid grid-rows-subgrid">
+          <Lable lable="Student Name" />
+          <Input
+            placeHolder="Tp-Number"
+            dynamicWidth="30%"
+            onChange={(e) => setTpNumber(e.target.value)}
+          />
+          <Button button="Submit " onClick={handleClick} />
+        </div>
+      </FormContainer>
     </div>
   );
 }
 
-export default App;
+export default StRegistration;
