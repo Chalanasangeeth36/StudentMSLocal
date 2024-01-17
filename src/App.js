@@ -15,13 +15,10 @@ function App() {
   // },[name]);
 
   const handleClick = (e) => {
-    e.preventDefault();
-    const student = {
-      stName: name,
-      stAddress: address,
-      stTele: tpNumber,
-      stClass: stClass,
-    };
+
+    e.preventDefault()
+    const student = { stName: name, stAddress: address, stTele: tpNumber, stClass: stClass }
+
     console.log(student);
     fetch("http://127.0.0.1:8080/student/reg", {
       method: "POST",
@@ -31,11 +28,13 @@ function App() {
       body: JSON.stringify(student),
       mode: "cors",
       credentials: "include",
+
     });
   };
 
   return (
     <div className="App ">
+
       <Title title="Student Registration Form" />
 
       <form className="border-2 border-black w-[60%] mx-auto">
@@ -47,6 +46,7 @@ function App() {
         />
         <br />
         <Lable lable="Address :" />
+
         <Input
           placeHolder="Address"
           dynamicWidth="50%"
@@ -80,6 +80,7 @@ function App() {
         </button>
       </form>
       <StRegistration />
+
     </div>
   );
 }
