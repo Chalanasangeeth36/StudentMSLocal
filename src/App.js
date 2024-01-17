@@ -9,26 +9,29 @@ function App() {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [tpNumber, setTpNumber] = useState("");
+  const [stClass, setStClass] = useState("");
 
   // useEffect(() => {
   //   setDisplayName(name);
   // },[name]);
 
-  const handleClick=(e)=>{
+  const handleClick = (e) => {
     e.preventDefault()
-    const student={stName:name ,stAddress: address,stTele: tpNumber}
+    const student = { stName: name, stAddress: address, stTele: tpNumber, stClass: stClass }
     console.log(student);
-    fetch("http://localhost:8080/student/add",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify(student)
+    fetch("http://127.0.0.1:8080/student/reg", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(student),
+      mode: "cors",
+      credentials: "include",
+    })
 
-  }).then(()=>{
-    alert("New Student added")
-  })
 
 
-}
+  }
 
   return (
     <div className="App ">
@@ -41,11 +44,17 @@ function App() {
         <Input placeHolder=" Name" dynamicWidth="30%" onChange={(e) => setName(e.target.value)} />
         <br />
         <Lable lable="Address :" />
-        <Input placeHolder="Address" dynamicWidth="50%" onChange={(e) => setAddress(e.target.value)}/>
+        <Input placeHolder="Address" dynamicWidth="50%" onChange={(e) => setAddress(e.target.value)} />
 
         <br />
         <Lable lable="Tp-Number :" />
-        <Input placeHolder="Tp-Number" dynamicWidth="30%" onChange={(e) => setTpNumber(e.target.value)}/>
+        <Input placeHolder="Tp-Number" dynamicWidth="30%" onChange={(e) => setTpNumber(e.target.value)} />
+        <br />
+
+        <br />
+        <Lable lable="Class :" />
+        <Input placeHolder="Class" dynamicWidth="30%" onChange={(e) => setStClass(e.target.value)} />
+        <br />
         <br />
         <button className="border border-black" type="submit" onClick={handleClick}>Submit</button>
       </form>
