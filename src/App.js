@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import Title from "./Componant/Title";
 import Lable from "./Componant/Lable";
@@ -24,10 +25,12 @@ function App() {
   }).then(()=>{
     alert("New Student added")
   })
+
 }
 
   return (
     <div className="App ">
+
       <Title title="Student Registration Form" />
 
       <form className="border-2 border-black w-[60%] mx-auto">
@@ -50,3 +53,5 @@ function App() {
 }
 
 export default App;
+
+
