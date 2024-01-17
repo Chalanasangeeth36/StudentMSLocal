@@ -6,30 +6,40 @@ import Button from "./../Componant/Button";
 import FormContainer from "./../Componant/FormContainer";
 
 function StRegistration() {
-  const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
-  const [tpNumber, setTpNumber] = useState("");
+ const [name, setName] = useState("");
+ const [address, setAddress] = useState("");
+ const [tpNumber, setTpNumber] = useState("");
+ const [stClass, setStClass] = useState("");
 
-  // useEffect(() => {
-  //   setDisplayName(name);
-  // },[name]);
+ // useEffect(() => {
+ //   setDisplayName(name);
+ // },[name]);
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    const student = { stName: name, stAddress: address, stTele: tpNumber };
-    console.log(student);
-    fetch("http://localhost:8080/student/add", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(student),
-    }).then(() => {
-      alert("New Student added");
-    });
-  };
+ const handleClick = (e) => {
+   e.preventDefault();
+   const student = {
+     stName: name,
+     stAddress: address,
+     stTele: tpNumber,
+     stClass: stClass,
+   };
+
+   console.log(student);
+   fetch("http://127.0.0.1:8080/student/reg", {
+     method: "POST",
+     headers: {
+       "Content-Type": "application/json",
+     },
+     body: JSON.stringify(student),
+     mode: "cors",
+     credentials: "include",
+   });
+ };
 
   return (
     <div className="App ">
       <Title title="Student Registration Form" />
+
       <form className="border-2 border-black w-[60%] mx-auto">
         <Lable lable="Student Full Name :" />
         <Input
@@ -39,6 +49,7 @@ function StRegistration() {
         />
         <br />
         <Lable lable="Address :" />
+
         <Input
           placeHolder="Address"
           dynamicWidth="50%"
@@ -52,13 +63,27 @@ function StRegistration() {
           dynamicWidth="30%"
           onChange={(e) => setTpNumber(e.target.value)}
         />
+        <br />
 
         <br />
-        <Button button="Submit " onClick={handleClick} />
+        <Lable lable="Class :" />
+        <Input
+          placeHolder="Class"
+          dynamicWidth="30%"
+          onChange={(e) => setStClass(e.target.value)}
+        />
+        <br />
+        <br />
+        <button
+          className="border border-black"
+          type="submit"
+          onClick={handleClick}
+        >
+          Submit
+        </button>
       </form>
 
       {/* form container */}
-
       <FormContainer>
         <div className="grid grid-rows-subgrid">
           <Lable lable="Student Name" />
