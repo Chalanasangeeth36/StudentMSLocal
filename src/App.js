@@ -1,4 +1,5 @@
 
+
 import React, { useState, useEffect } from "react";
 import Title from "./Componant/Title";
 import Lable from "./Componant/Lable";
@@ -26,10 +27,12 @@ function App() {
     alert("New Student added")
   })
 
+
 }
 
   return (
     <div className="App ">
+
 
       <Title title="Student Registration Form" />
 
@@ -46,7 +49,6 @@ function App() {
         <br />
         <button className="border border-black" type="submit" onClick={handleClick}>Submit</button>
       </form>
-
 
     </div>
   );
