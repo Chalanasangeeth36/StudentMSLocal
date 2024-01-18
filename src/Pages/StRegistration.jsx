@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FormContainer from "../Componant/Elements/FormContainer";
 import Title from "../Componant/Elements/Title";
-import Lable from "../Componant/Elements/Lable";
+import Label from "../Componant/Elements/Label";
 import Input from "../Componant/Elements/Input";
 import Button from "../Componant/Elements/Button";
 import RadioButton from "../Componant/Elements/RadioButton";
@@ -42,14 +42,14 @@ function StRegistration() {
       <Title title="Student Registration Form" />
 
       <form className="border-2 border-black w-[60%] mx-auto">
-        <Lable lable="Student Full Name :" />
+        <Label label="Student Full Name" />
         <Input
           placeHolder=" Name"
           dynamicWidth="30%"
           onChange={(e) => setName(e.target.value)}
         />
         <br />
-        <Lable lable="Address :" />
+        <Label label="Address :" />
 
         <Input
           placeHolder="Address"
@@ -58,7 +58,7 @@ function StRegistration() {
         />
 
         <br />
-        <Lable lable="Tp-Number :" />
+        <Label label="Tp-Number :" />
         <Input
           placeHolder="Tp-Number"
           dynamicWidth="30%"
@@ -67,7 +67,7 @@ function StRegistration() {
         <br />
 
         <br />
-        <Lable lable="Class :" />
+        <Label label="Class" />
         <Input
           placeHolder="Class"
           dynamicWidth="30%"
@@ -87,7 +87,7 @@ function StRegistration() {
       {/* form container */}
       <FormContainer>
         <div className="grid grid-rows-subgrid">
-          <Lable lable="Student Name" />
+          <Label label="Student Name" />
           <Input
             placeHolder="Tp-Number"
             dynamicWidth="30%"

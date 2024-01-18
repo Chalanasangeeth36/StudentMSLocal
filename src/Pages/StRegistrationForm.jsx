@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import FormContainer from "../Componant/Elements/FormContainer";
 import Title from "../Componant/Elements/Title";
-import Lable from "../Componant/Elements/Lable";
+import Lable from "../Componant/Elements/Label";
 import Input from "../Componant/Elements/Input";
 import Button from "../Componant/Elements/Button";
 import RadioButton from "../Componant/Elements/RadioButton";
@@ -26,39 +26,43 @@ const StRegistrationForm = () => {
       <FormContainer>
         <div className="grid grid-rows-subgrid">
           {/* input 01 */}
-          <Lable lable="Student Full Name " />
-          <Input placeHolder="Enter Student Name" id="stName" />
+          <Lable label="Student Full Name " />
+          <Input placeHolder=" Student Name" id="stName" />
 
           {/* input 02 */}
-          <Lable lable="Name with Initials" />
-          <Input placeHolder="Name with Initials" id="NameInitials" />
+          <Lable label="Email Address" />
+          <Input placeHolder="Email Address" id="EmailAddress" />
 
           {/* input 03 */}
-          <Lable lable="Permanent Address" />
-          <Input placeHolder="Permanent Address" id="PerAddress" />
+          <Lable label="Name with Initials" />
+          <Input placeHolder="Name with Initials" id="NameInitials" />
 
           {/* input 04 */}
-          <Lable lable="Contact  Number" />
-          <Input placeHolder="Contact  Number" id="ContactNum" />
+          <Lable label="Permanent Address" />
+          <Input placeHolder="Permanent Address" id="PerAddress" />
 
           {/* input 05 */}
-          <Lable lable="WhatsApp Number" />
+          <Lable label="Contact  Number" />
+          <Input placeHolder="Contact  Number" id="ContactNum" />
+
+          {/* input 06 */}
+          <Lable label="WhatsApp Number" />
           <Input placeHolder="WhatsApp Number" id="whtsAppNumber" />
         </div>
       </FormContainer>
 
       <FormContainer>
-        <div className="grid md:grid-cols-5">
+        <div className="grid mb-5 md:grid-cols-5">
           <div className="col-span-2 ">
-            <Lable lable="If you student of any other" />
+            <Lable label="If you student of any other" />
           </div>
-          <div className="md:ml-12">
-            <RadioButton options={choice} />
+          <div>
+            <RadioButton label1="Yes" label2="No" />
           </div>
         </div>
         <div className="">
           {/* input 01 */}
-          <Lable lable="Institute Name" />
+          <Lable label="Institute Name" />
           <Input
             placeHolder="Institute Name"
             isFullWidth={true}
@@ -66,7 +70,7 @@ const StRegistrationForm = () => {
           />
 
           {/* input 02 */}
-          <Lable lable="Following Courses" />
+          <Lable label="Following Courses" />
           <Input
             placeHolder="Following Courses"
             isFullWidth={true}
@@ -78,7 +82,7 @@ const StRegistrationForm = () => {
       <FormContainer>
         <div className="flex flex-col">
           {/* input 01 */}
-          <Lable lable="Working Place Name" />
+          <Lable label="Working Place Name" />
           <Input
             placeHolder="Working Place Name"
             isFullWidth={true}
@@ -86,29 +90,29 @@ const StRegistrationForm = () => {
           />
 
           {/* input 02 */}
-          <Lable lable="Working Place Address" />
+          <Lable label="Working Place Address" />
           <Input
             placeHolder="Working Place Address"
             isFullWidth={true}
             id="workingAddress"
           />
 
-          <div className="grid md:grid-cols-5">
+          <div className="grid mb-5 md:grid-cols-5">
             <div className="col-span-2 ">
-              <Lable lable="Do you have your Own Scanner" />
+              <Lable label="Do you have your Own Scanner" />
             </div>
-            <div className="md:ml-12">
-              <RadioButton options={choice} />
+            <div>
+              <RadioButton label1="Yes" label2="No" />
             </div>
           </div>
 
           <div className="grid md:grid-cols-5">
             <div className="col-span-2 ">
-              <Lable lable="Do you have any other experience with " />
+              <Lable label="Do you have any other experience with " />
             </div>
             <div>
-              <div className="md:ml-12">
-                <RadioButton options={choice} />
+              <div>
+                <RadioButton label1="Yes" label2="No" />
               </div>
             </div>
           </div>
@@ -116,18 +120,8 @@ const StRegistrationForm = () => {
           <div className="w-[100%] justify-center flex">
             <Button button="Save" />
           </div>
-
-          <Dropdown
-            id="courseSel"
-            items={items}
-            title="Select Course"
-            onSelect={handleDropdownSelect}
-          />
         </div>
       </FormContainer>
-
-      <br />
-      <br />
     </div>
   );
 };
