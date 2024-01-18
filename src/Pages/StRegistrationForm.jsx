@@ -118,7 +118,11 @@ const StRegistrationForm = () => {
           </div>
 
           <div className="w-[100%] justify-center flex">
-            <Button button="Save" />
+            <Button
+              button="Save"
+              bgColor="bg-blue-600"
+              fontColor="text-white"
+            />
           </div>
         </div>
       </FormContainer>

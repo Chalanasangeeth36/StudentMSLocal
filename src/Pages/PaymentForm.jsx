@@ -29,7 +29,8 @@ const PaymentForm = () => {
           <Button
             button="Add Payment"
             fronticon={<IoAddCircleOutline />}
-            bgcolor="pink-500"
+            bgColor="bg-blue-600"
+            fontColor="text-white"
           />
         </div>
       </FormContainer>
