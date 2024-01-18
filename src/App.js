@@ -10,8 +10,8 @@ function App() {
     <div className=" App">
 
       <StRegistrationForm />
-      <ClassRegistration/>
-      <PaymentForm/>
+      {/* <ClassRegistration/> */}
+      {/* <PaymentForm/> */}
 
     </div>
   );
