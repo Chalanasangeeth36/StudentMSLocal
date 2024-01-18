@@ -8,14 +8,14 @@ import RadioButton from "../Componant/Elements/RadioButton";
 import Dropdown from "../Componant/Elements/DropDown";
 
 const ClassRegistration = () => {
-    const choice = ["Part Time", "Full Time"];
-    const locations = ["location", "location", "location"];
+    const locations = ["location1", "location2", "location3"];
     const courses = ["courses1", "courses2", "courses3"];
     const classes = ["class1", "class2", "class3"];
 
       const handleDropdownSelect = (selectedItem) => {
         console.log("Selected item:", selectedItem);
       };
+      
   return (
     <div>
       <Title title="Class Registration Form" />
@@ -29,32 +29,32 @@ const ClassRegistration = () => {
           {/* input 02 */}
           <Lable lable="Branch Location (The student registered)" />
           <Dropdown
-            id="location"
-            items={locations}
+            id="classes"
             title="Branch Location"
-            onSelect={handleDropdownSelect}
-          />
-
-          {/* input 03 */}
-          <Lable lable="Course" />
-          <Dropdown
-            id="course"
-            items={courses}
-            title="Select Course"
+            choices={locations}
             onSelect={handleDropdownSelect}
           />
 
           {/* input 04 */}
-          <Lable lable="class" />
+          <Lable lable="Course" />
           <Dropdown
-            id="classes"
-            items={classes}
-            title="Registered  Class"
+            id="course"
+            title="Select Course"
+            choices={courses}
             onSelect={handleDropdownSelect}
           />
 
+          {/* input 05 */}
+          <Lable lable="Class" />
+          <Dropdown
+            id="classes"
+            title="Registered  Class"
+            choices={classes}
+            onSelect={handleDropdownSelect}
+          />
+          {/* input 06 */}
           <Lable lable="Time Duration" />
-          <RadioButton options={choice} />
+          <RadioButton options={["Part Time", "Full Time"]} />
 
           <div className="w-[100%] justify-center flex">
             <Button button="Save" />
