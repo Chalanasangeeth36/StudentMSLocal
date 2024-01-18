@@ -122,6 +122,7 @@ const StRegistrationForm = () => {
               button="Save"
               bgColor="bg-blue-600"
               fontColor="text-white"
+              borderColor="border-blue-600"
             />
           </div>
         </div>
