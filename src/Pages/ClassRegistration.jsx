@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import FormContainer from "../Componant/Elements/FormContainer";
 import Title from "../Componant/Elements/Title";
-import Lable from "../Componant/Elements/Lable";
+import Lable from "../Componant/Elements/Label";
 import Input from "../Componant/Elements/Input";
 import Button from "../Componant/Elements/Button";
 import RadioButton from "../Componant/Elements/RadioButton";
@@ -23,11 +23,11 @@ const ClassRegistration = () => {
       <FormContainer>
         <div className="grid grid-rows-subgrid">
           {/* input 01 */}
-          <Lable lable="Student Full Name " />
-          <Input placeHolder="Enter Student Name" id="stName" />
+          <Lable label="Student ID " />
+          <Input placeHolder="Enter Student ID" id="stId" />
 
           {/* input 02 */}
-          <Lable lable="Branch Location (The student registered)" />
+          <Lable label="Branch Location (The student registered)" />
           <Dropdown
             id="classes"
             title="Branch Location"
@@ -36,7 +36,7 @@ const ClassRegistration = () => {
           />
 
           {/* input 04 */}
-          <Lable lable="Course" />
+          <Lable label="Course" />
           <Dropdown
             id="course"
             title="Select Course"
@@ -45,7 +45,7 @@ const ClassRegistration = () => {
           />
 
           {/* input 05 */}
-          <Lable lable="Class" />
+          <Lable label="Class" />
           <Dropdown
             id="classes"
             title="Registered  Class"
@@ -53,11 +53,11 @@ const ClassRegistration = () => {
             onSelect={handleDropdownSelect}
           />
           {/* input 06 */}
-          <Lable lable="Time Duration" />
+          <Lable label="Time Duration" />
           <RadioButton options={["Part Time", "Full Time"]} />
 
           <div className="w-[100%] justify-center flex">
-            <Button button="Save" />
+            <Button button="Save"  />
           </div>
         </div>
       </FormContainer>

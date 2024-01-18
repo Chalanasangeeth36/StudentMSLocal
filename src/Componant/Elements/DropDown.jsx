@@ -44,7 +44,7 @@ const DropDown = ({ choices, onSelect, title }) => {
         <div className="relative inline-block mb-8 max-md:w-[100%] w-[50%] ">
           <button
             onClick={() => setDropdownOpen(!dropdownOpen)}
-            className={`flex  gap-2.5 py-4 px-5 w-[100%] rounded-[0.625rem] bg-[#e9f5fe]  ${
+            className={`flex  gap-2.5 py-3 md:py-4 px-5 w-[100%] rounded-[0.625rem] bg-[#e9f5fe]  ${
               valueSelected ? "text-blue-500 font-semibold " : "text-gray-400"
             }`}
           >

@@ -1,43 +1,15 @@
 import React from "react";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormControl from "@material-ui/core/FormControl";
-import Typography from "@material-ui/core/Typography";
+import { Radio } from "@material-tailwind/react";
 
-export default function RadioButtonsGroup(props) {
-  const [value, setValue] = React.useState(""); // Set the default value to the first option
-
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
+const RadioButton = (props) => {
   return (
-    <FormControl component="fieldset">
-      <div>
-        <Typography
-          variant="h6"
-          gutterBottom
-          style={{ fontFamily: "Poppins, sans-serif" }}
-        >
-          {props.label}
-        </Typography>
-        <div className="mb-8">
-          <RadioGroup name="choice" value={value} onChange={handleChange}>
-            <div className="flex flex-row gap-8">
-              {props.options.map((option, index) => (
-                <FormControlLabel
-                  key={index}
-                  value={option}
-                  control={<Radio color="primary" />}
-                  label={option}
-                  className="text-blue-800 " // Updated font styles using Tailwind CSS classes
-                />
-              ))}
-            </div>
-          </RadioGroup>
-        </div>
+    <div>
+      <div className="flex gap-10 md:ml-4">
+        <Radio name="type" label={props.label1} />
+        <Radio name="type" label={props.label2} />
       </div>
-    </FormControl>
+    </div>
   );
-}
+};
+
+export default RadioButton;
