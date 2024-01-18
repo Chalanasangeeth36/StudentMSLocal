@@ -1,15 +1,11 @@
-import React from "react";
-import { Radio } from "@material-tailwind/react";
+import React from 'react'
 
-const RadioButton = (props) => {
+const RadioButton = () => {
   return (
     <div>
-      <div className="flex gap-10 md:ml-4">
-        <Radio name="type" label={props.label1} />
-        <Radio name="type" label={props.label2} />
-      </div>
+      
     </div>
-  );
-};
+  )
+}
 
-export default RadioButton;
+export default RadioButton
