@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Title from "./../Componant/Title";
-import Lable from "./../Componant/Lable";
-import Input from "./../Componant/Input";
-import Button from "./../Componant/Button";
-import FormContainer from "./../Componant/FormContainer";
+import FormContainer from "../Componant/Elements/FormContainer";
+import Title from "../Componant/Elements/Title";
+import Lable from "../Componant/Elements/Lable";
+import Input from "../Componant/Elements/Input";
+import Button from "../Componant/Elements/Button";
+import RadioButton from "../Componant/Elements/RadioButton";
 
 function StRegistration() {
  const [name, setName] = useState("");
