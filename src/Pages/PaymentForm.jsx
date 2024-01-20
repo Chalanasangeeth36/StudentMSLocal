@@ -23,7 +23,7 @@ const PaymentForm = () => {
 
         {/* input 03 */}
         <Label label="Overdue Amount" />
-        <Input placeHolder="" />
+        <Input placeHolder="" disabled="disabled" />
 
         {/* button */}
         <div className="w-[100%] justify-center flex">

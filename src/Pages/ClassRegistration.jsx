@@ -8,14 +8,22 @@ import RadioButton from "../Componant/Elements/RadioButton";
 import Dropdown from "../Componant/Elements/DropDown";
 
 const ClassRegistration = () => {
-    const locations = ["location1", "location2", "location3"];
-    const courses = ["courses1", "courses2", "courses3"];
-    const classes = ["class1", "class2", "class3"];
+  const locations = ["location1", "location2", "location3"];
+  const courses = ["courses1", "courses2", "courses3"];
+  const classes = ["class1", "class2", "class3"];
 
-      const handleDropdownSelect = (selectedItem) => {
-        console.log("Selected item:", selectedItem);
-      };
-      
+  const handleDropdownSelect = (selectedItem) => {
+    console.log("Selected item:", selectedItem);
+  };
+
+  
+  const [time, setTime] = React.useState("");
+
+  const handleSetTime = (event) => {
+    setTime(event.target.value);
+  };
+
+
   return (
     <div>
       <Title title="Class Registration Form" />
@@ -54,7 +62,25 @@ const ClassRegistration = () => {
           />
           {/* input 06 */}
           <Lable label="Time Duration" />
-          <RadioButton options={["Part Time", "Full Time"]} />
+          <div className="flex gap-[15%]">
+            <RadioButton
+              id="parttime"
+              name="settime"
+              checked={time === "parttime"}
+              value="parttime"
+              onChange={handleSetTime}
+              label="Part Time"
+            />
+
+            <RadioButton
+              id="fulltime"
+              name="settime"
+              checked={time === "fulltime"}
+              value="fulltime"
+              onChange={handleSetTime}
+              label="Full Time"
+            />
+          </div>
 
           <div className="w-[100%] justify-center flex">
             <Button
