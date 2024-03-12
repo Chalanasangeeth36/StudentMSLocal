@@ -7,7 +7,8 @@ const Button = (props) => {
   
   return (
     <div
-      className={`${buttonWidth}  mt-4 h-5 md:h-10 px-8 py-5 rounded justify-center items-center gap-2.5 inline-flex ${bgColor} ${borderColor} border-2`}
+      type="button"
+      className={`${buttonWidth} cursor-pointer mt-4 h-5 md:h-10 px-8 py-5 rounded justify-center items-center gap-2.5 inline-flex ${bgColor} ${borderColor} border-2`}
     >
       <div className={`mr-1 text-xl ${fontColor} md:text-2xl`}>{fronticon}</div>
       <div
